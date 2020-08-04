@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: c16cefcd4f1768f4393224f3c6799823
+guid: ca24ff94b56fbe743a1c05c3f11a080a
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BottomBox
+    second: {fileID: 2100000, guid: 363256d5ff788a147a273d68cc73ec9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lock
+    second: {fileID: 2100000, guid: 34b885f036cf09a46a01fed04eadd22c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TopBox
+    second: {fileID: 2100000, guid: 3fa22b264ff6d7646a786bbe5ea4bea3, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
