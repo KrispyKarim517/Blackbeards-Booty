@@ -154,7 +154,7 @@ Transform:
   - {fileID: 1519274013}
   - {fileID: 2027136107}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &293244216
 GameObject:
@@ -182,15 +182,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 293244216}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bf467fc8a7c23543bf58baf20ab5905, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f8b97f33539ced4abfc4af7a66d3ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WinnerGeneratedEvent:
+  disable_automatic_guess: 1
+  BetMadeEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 788027402}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: UpdateColor
+      - m_Target: {fileID: 1523704789}
+        m_TargetAssemblyTypeName: script_BetRow, Assembly-CSharp
+        m_MethodName: UpdateRow
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -200,157 +201,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 439263531}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: UpdateColor
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1692180418}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: UpdateColor
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 617282940}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: UpdateColor
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 670655445}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: UpdateColor
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  ClearBoardEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 788027402}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: UpdateColor
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 439263531}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: UpdateColor
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1692180418}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: UpdateColor
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 617282940}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: UpdateColor
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 670655445}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: UpdateColor
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1810357676}
-        m_TargetAssemblyTypeName: script_Gambler, Assembly-CSharp
-        m_MethodName: NewRound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1519274014}
-        m_TargetAssemblyTypeName: script_Gambler, Assembly-CSharp
-        m_MethodName: NewRound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2027136106}
-        m_TargetAssemblyTypeName: script_Gambler, Assembly-CSharp
-        m_MethodName: NewRound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  display_winner_text_box: {fileID: 758143177}
-  g1: {fileID: 1810357676}
-  g2: {fileID: 1519274014}
-  g3: {fileID: 2027136106}
+  most_recent_bet: []
+  gambler_name: Winner
 --- !u!4 &293244218
 Transform:
   m_ObjectHideFlags: 0
@@ -363,7 +215,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &295353253
 GameObject:
@@ -574,7 +426,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1523704788}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -930,7 +782,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1523704788}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -988,6 +840,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617282938}
   m_CullTransparentMesh: 0
+--- !u!1 &640231740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 640231742}
+  - component: {fileID: 640231741}
+  m_Layer: 0
+  m_Name: Bet Storage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &640231741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640231740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56bfb1957e1d7847a2cead5166d5553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &640231742
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640231740}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 500.7538, y: 195.67616, z: -67.23236}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &670655443
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,7 +914,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1523704788}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1256,8 +1151,9 @@ GameObject:
   - component: {fileID: 758143176}
   - component: {fileID: 758143178}
   - component: {fileID: 758143177}
+  - component: {fileID: 758143179}
   m_Layer: 5
-  m_Name: Text
+  m_Name: WinnersText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1275,7 +1171,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1316339921}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1324,6 +1220,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758143175}
   m_CullTransparentMesh: 0
+--- !u!114 &758143179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758143175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f164d3c4b4c5bb45a9f31b3a2d12a2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &778632570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,7 +1355,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1523704788}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1514,7 +1422,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 875006414}
-  - component: {fileID: 875006415}
   m_Layer: 5
   m_Name: Guess Table
   m_TagString: Untagged
@@ -1532,30 +1439,222 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1279139463}
-  - {fileID: 1775573727}
-  - {fileID: 1939095483}
+  m_Children: []
   m_Father: {fileID: 1316339921}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000030517578, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &875006415
+--- !u!1 &993673647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 993673649}
+  - component: {fileID: 993673648}
+  m_Layer: 0
+  m_Name: Bet Funnel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &993673648
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 875006413}
+  m_GameObject: {fileID: 993673647}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6cc03355acee68847a89d77a8701016a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gobj_row1: {fileID: 1279139464}
+  gobj_row2: {fileID: 1775573728}
+  gobj_row3: {fileID: 1939095484}
+  ref_BetStoarge: {fileID: 640231741}
+--- !u!4 &993673649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993673647}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 500.7538, y: 195.67616, z: -67.23236}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1021048776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1021048778}
+  - component: {fileID: 1021048777}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1021048777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021048776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 377fdf70903cdf2458047a501684239f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ref_BetHolder: {fileID: 640231741}
+  display_winner_text_box: {fileID: 758143177}
+  ref_Winner: {fileID: 293244217}
+  ref_g1: {fileID: 1810357676}
+  ref_g2: {fileID: 1519274014}
+  ref_g3: {fileID: 2027136106}
+  NewRound:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 758143179}
+        m_TargetAssemblyTypeName: script_tempDisplayScript, Assembly-CSharp
+        m_MethodName: Clear
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1279139464}
+        m_TargetAssemblyTypeName: script_BetRow, Assembly-CSharp
+        m_MethodName: ClearRow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1775573728}
+        m_TargetAssemblyTypeName: script_BetRow, Assembly-CSharp
+        m_MethodName: ClearRow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1939095484}
+        m_TargetAssemblyTypeName: script_BetRow, Assembly-CSharp
+        m_MethodName: ClearRow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1523704789}
+        m_TargetAssemblyTypeName: script_BetRow, Assembly-CSharp
+        m_MethodName: ClearRow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1810357676}
+        m_TargetAssemblyTypeName: script_Gambler, Assembly-CSharp
+        m_MethodName: NewRound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1519274014}
+        m_TargetAssemblyTypeName: script_Gambler, Assembly-CSharp
+        m_MethodName: NewRound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2027136106}
+        m_TargetAssemblyTypeName: script_Gambler, Assembly-CSharp
+        m_MethodName: NewRound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 640231741}
+        m_TargetAssemblyTypeName: script_InputStorage, Assembly-CSharp
+        m_MethodName: ClearInputs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &1021048778
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021048776}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 359.51797, y: 206.32051, z: -63.07867}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1039012284
 GameObject:
   m_ObjectHideFlags: 0
@@ -1857,8 +1956,8 @@ RectTransform:
   - {fileID: 410979716}
   - {fileID: 1710997182}
   - {fileID: 1056422592}
-  m_Father: {fileID: 875006414}
-  m_RootOrder: 0
+  m_Father: {fileID: 1316339921}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1933,69 +2032,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
         m_MethodName: UpdateColor
         m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  ClearRowEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1186183491}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: ClearColor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1317423774}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: ClearColor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 410979717}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: ClearColor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1710997183}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: ClearColor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1056422593}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: ClearColor
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2094,11 +2130,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1523704788}
   - {fileID: 875006414}
+  - {fileID: 1939095483}
+  - {fileID: 1775573727}
+  - {fileID: 1279139463}
+  - {fileID: 1523704788}
   - {fileID: 758143176}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2273,6 +2312,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1388790908}
   m_CullTransparentMesh: 0
+--- !u!1 &1498042324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1498042325}
+  - component: {fileID: 1498042327}
+  - component: {fileID: 1498042326}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1498042325
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498042324}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.9691, y: 1.9691, z: 1.9691}
+  m_Children: []
+  m_Father: {fileID: 1523704788}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -180, y: 83}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1498042326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498042324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Winner
+--- !u!222 &1498042327
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498042324}
+  m_CullTransparentMesh: 0
 --- !u!1 &1519274012
 GameObject:
   m_ObjectHideFlags: 0
@@ -2316,10 +2434,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f8b97f33539ced4abfc4af7a66d3ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disable_automatic_guess: 0
   BetMadeEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 875006415}
+      - m_Target: {fileID: 993673648}
         m_TargetAssemblyTypeName: script_BetAcceptor, Assembly-CSharp
         m_MethodName: RecieveBet
         m_Mode: 0
@@ -2342,6 +2461,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1523704788}
+  - component: {fileID: 1523704789}
   m_Layer: 5
   m_Name: Winning Set
   m_TagString: Untagged
@@ -2360,19 +2480,96 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.54899, y: 0.54899, z: 0.54899}
   m_Children:
+  - {fileID: 1498042325}
   - {fileID: 788027401}
   - {fileID: 439263530}
   - {fileID: 1692180417}
   - {fileID: 617282939}
   - {fileID: 670655444}
   m_Father: {fileID: 1316339921}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -157, y: 119}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1523704789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523704787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d10701ba47bcc6347932a8c5f2b5d0d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1498042326}
+  UpdateRowEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 788027402}
+        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
+        m_MethodName: UpdateColor
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 439263531}
+        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
+        m_MethodName: UpdateColor
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1692180418}
+        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
+        m_MethodName: UpdateColor
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 617282940}
+        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
+        m_MethodName: UpdateColor
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 670655445}
+        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
+        m_MethodName: UpdateColor
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1692180416
 GameObject:
   m_ObjectHideFlags: 0
@@ -2404,7 +2601,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1523704788}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2674,8 +2871,8 @@ RectTransform:
   - {fileID: 614304978}
   - {fileID: 1897571106}
   - {fileID: 295353254}
-  m_Father: {fileID: 875006414}
-  m_RootOrder: 1
+  m_Father: {fileID: 1316339921}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2750,69 +2947,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
         m_MethodName: UpdateColor
         m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  ClearRowEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1889634732}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: ClearColor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 708421932}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: ClearColor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 614304979}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: ClearColor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1897571107}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: ClearColor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 295353255}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: ClearColor
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3032,10 +3166,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f8b97f33539ced4abfc4af7a66d3ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disable_automatic_guess: 0
   BetMadeEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 875006415}
+      - m_Target: {fileID: 993673648}
         m_TargetAssemblyTypeName: script_BetAcceptor, Assembly-CSharp
         m_MethodName: RecieveBet
         m_Mode: 0
@@ -3261,8 +3396,8 @@ RectTransform:
   - {fileID: 1740687397}
   - {fileID: 1805253221}
   - {fileID: 1039012285}
-  m_Father: {fileID: 875006414}
-  m_RootOrder: 2
+  m_Father: {fileID: 1316339921}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3345,69 +3480,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  ClearRowEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 588368501}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: ClearColor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 440320111}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: ClearColor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1740687398}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: ClearColor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1805253222}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: ClearColor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1039012286}
-        m_TargetAssemblyTypeName: script_SlotDisplay, Assembly-CSharp
-        m_MethodName: ClearColor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &2027136105
 GameObject:
   m_ObjectHideFlags: 0
@@ -3437,10 +3509,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f8b97f33539ced4abfc4af7a66d3ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disable_automatic_guess: 0
   BetMadeEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 875006415}
+      - m_Target: {fileID: 993673648}
         m_TargetAssemblyTypeName: script_BetAcceptor, Assembly-CSharp
         m_MethodName: RecieveBet
         m_Mode: 0
@@ -3615,5 +3688,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

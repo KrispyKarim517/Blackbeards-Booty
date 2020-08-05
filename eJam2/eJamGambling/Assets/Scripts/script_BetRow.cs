@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -11,20 +12,13 @@ public class script_BetRow : MonoBehaviour
     [SerializeField] Text text = null;
 
     public UnityEvent<Color[]> UpdateRowEvent = new UnityEvent<Color[]>();
-    public UnityEvent ClearRowEvent = new UnityEvent();
 
-    // Start is called before the first frame update
+    List<script_SlotDisplay> list_slots;
+
     void Start()
     {
-        
+        list_slots = this.GetComponentsInChildren<script_SlotDisplay>().ToList();    
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 
     public void UpdateRow(Tuple<string, Color[]> bet_data)
     {
@@ -34,7 +28,13 @@ public class script_BetRow : MonoBehaviour
 
     public void ClearRow()
     {
+        Debug.Log(text.text);
         text.text = "Place a Bet";
-        ClearRowEvent.Invoke();
+
+        foreach(var slot in list_slots)
+        {
+            slot.ClearColor();
+        }
+        Debug.Log("");
     }
 }

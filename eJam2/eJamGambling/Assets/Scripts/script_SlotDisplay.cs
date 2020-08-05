@@ -20,6 +20,8 @@ public class script_SlotDisplay : MonoBehaviour
 
     public void ClearColor()
     {
+        Debug.Log(imgComponent.color);
         imgComponent.color = new Color(0f, 0f, 0f, 1f);
+        Debug.Log(imgComponent.color);
     }
 }

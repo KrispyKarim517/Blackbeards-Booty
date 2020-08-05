@@ -5,7 +5,7 @@ using UnityEngine;
 public class script_InputStorage : MonoBehaviour
 {
     //Dictionary of inputs
-    Dictionary<string, Color[]> dict_inputs;
+    Dictionary<string, Color[]> dict_inputs = new Dictionary<string, Color[]>();
 
     //Adds an input for the given name and code, returns true if successfully added, false if name already exists or invalid name
     public bool AddInput(string name, Color[] code)
