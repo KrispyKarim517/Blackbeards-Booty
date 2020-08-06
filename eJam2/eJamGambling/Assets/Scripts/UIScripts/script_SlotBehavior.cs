@@ -4,7 +4,7 @@ using UnityEngine.UI;
 /*
     AUTHOR: Nichole Wong
     UNITY VERSION: 2020.1.0f1
-    LAST MODIFIED: 8/5/2020
+    LAST MODIFIED: 8/6/2020
     
     This script controls how slots react to the following events:
         - Pressing one of the gem-shaped buttons
@@ -48,7 +48,16 @@ public class script_SlotBehavior : MonoBehaviour
         GameObject gobj_temp_NewObject = new GameObject();
         Image image_temp_NewImage = gobj_temp_NewObject.AddComponent<Image>();
         image_temp_NewImage.sprite = sprite_var_NewSprite;
-        gobj_temp_NewObject.GetComponent<RectTransform>().SetParent(transform_SlotImages);
+        RectTransform transform_temp_gobjTransform = gobj_temp_NewObject.GetComponent<RectTransform>();
+        transform_temp_gobjTransform.SetParent(transform_SlotImages);
+        
+        // Bug found: Sometimes, the game object will be scaled by a factor greater than 1, causing
+        // the game object to appear out of bounds (too big for the slot).
+        // To fix, check whether the game object is too big and adjust it to a scale of 1 (which seems to work).
+        if (transform_temp_gobjTransform.localScale.x > 1f || transform_temp_gobjTransform.localScale.y > 1f)
+        {
+            transform_temp_gobjTransform.localScale = new Vector3(1f, 1f, 1f);
+        }
         gobj_temp_NewObject.SetActive(true);
     }
     
