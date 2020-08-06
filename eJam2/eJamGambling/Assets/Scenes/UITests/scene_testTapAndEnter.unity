@@ -2184,7 +2184,7 @@ MonoBehaviour:
   ref_SlotBehavior: {fileID: 343420669}
   ref_InputFieldSettings: {fileID: 1332602556}
   ref_GemButtonBehavior: {fileID: 1000802238}
-  string_NextSceneName: KarimScene
+  string_NextSceneName: scene_testDisplayUI
   float_UnactiveAlphaValue: 0.2
   float_ActiveAlphaValue: 1
   TextMeshProUGUI_EnterButtonText: {fileID: 1522052647}
@@ -2910,7 +2910,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 1a87f898d18fa1c469b98fdfe0645576, type: 3}
-  m_Type: 1
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
