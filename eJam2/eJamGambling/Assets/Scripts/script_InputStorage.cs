@@ -33,29 +33,72 @@ public class script_InputStorage : MonoBehaviour
         dict_inputs.Clear();
     }
 
-    //returns a list of strings containing winning names for a given code, empty list means no winners
-    public List<string> CheckWins(Color[] code)
+    //returns a dict with keys being strings containing winning names for a given code and values of the tier of prize they won (1-6), empty list means no winners
+    public Dictionary<string, int> CheckWins(Color[] code)
     {
-        List<string> winners = new List<string>();
+        Dictionary<string, int> winners = new Dictionary<string, int>();
 
         foreach(var entry in dict_inputs)
         {
-            int correctColors = 0;
-
-            for(int count = 0; count < entry.Value.Length; ++count)
+            int score = CheckWinForGivenCode(entry.Value, code)
+            if(score != 0)
             {
-                if(entry.Value[count].Equals(code[count]))
-                {
-                    ++correctColors;
-                }
-            }
-
-            if(correctColors == entry.Value.Length)
-            {
-                winners.Add(entry.Key);
+                winners.Add(entry.Key, score);
             }
         }
 
         return winners;
     }
+
+    private int CheckWinForGivenCode(Color[] entry, Color[] code)
+    {
+        int score = 0;
+        int correctColors = 0;
+
+        for(int count = 0; count < entry.Length; ++count)
+        {
+            if(entry[count].Equals(code[count]))
+            {
+                ++correctColors;
+            }
+        }
+        if(correctColors == entry.Length)
+        {
+            if(entry.Length == 3)
+                score = 2;
+            else if(entry.Length == 4)
+                score = 4;
+            else if(entry.Length == 5)
+                score = 6;
+            
+            return score;
+        }
+
+        correctColors = 0;
+        for(int count = 0; count < entry.Length; ++count)
+        {
+            for(int i = 0; i < entry.Length; ++i)
+            {
+                if(entry[count].Equals(code[i]))
+                {
+                    ++correctColors;
+                    break;
+                }
+            }
+        }
+        if(correctColors == entry.Length)
+        {
+            if(entry.Length == 3)
+                score = 1;
+            else if(entry.Length == 4)
+                score = 3;
+            else if(entry.Length == 5)
+                score = 5;
+            
+            return score;
+        }
+
+        return score;
+    }
+
 }
