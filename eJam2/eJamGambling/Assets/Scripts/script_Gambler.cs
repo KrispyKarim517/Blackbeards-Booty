@@ -1,12 +1,20 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
 using UnityEngine.Events;
 
 [System.Serializable]
 public class script_Gambler : MonoBehaviour
 {
+    [SerializeField] static Sprite sprite_Red_Gem = null;
+    [SerializeField] static Sprite sprite_Green_Gem = null;
+    [SerializeField] static Sprite sprite_Blue_Gem = null;
+    [SerializeField] static Sprite sprite_White_Gem = null;
+    [SerializeField] static Sprite sprite_Yellow_Gem = null;
+    Dictionary<Color, Sprite> dict_ColorSpriteMap;
+
     [SerializeField] bool disable_automatic_guess = false;
 
     static System.Random rand = new System.Random();
@@ -34,6 +42,14 @@ public class script_Gambler : MonoBehaviour
     {
         wait_time = rand.Next(1, 3);
 
+        dict_ColorSpriteMap = new Dictionary<Color, Sprite>
+            {
+                { Color.red, sprite_Red_Gem},
+                { Color.green, sprite_Green_Gem },
+                { Color.blue, sprite_Blue_Gem },
+                { Color.white, sprite_White_Gem },
+                { Color.yellow, sprite_Yellow_Gem }
+            };
     }
 
     // Update is called once per frame
@@ -52,6 +68,12 @@ public class script_Gambler : MonoBehaviour
     public void MakeBet()
     {
         Color[] bet = { colors_arr[rand.Next(0, 5)], colors_arr[rand.Next(0, 5)], colors_arr[rand.Next(0, 5)], colors_arr[rand.Next(0, 5)], colors_arr[rand.Next(0, 5)] };
+
+        for (int gem = 0; gem < bet.Length; gem++)
+        {
+            //if dict.containskey(bet[gem])
+            //instantiate dict(bet[gem]).value
+        }
 
         most_recent_bet = bet;
 
