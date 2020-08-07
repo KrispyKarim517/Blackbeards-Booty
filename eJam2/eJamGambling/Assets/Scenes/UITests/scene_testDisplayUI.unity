@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e41ddcfe24b4b7e489635e3a6cf317fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  float_NumberOfSeconds: 1800
+  float_NumberOfSeconds: 18
   TextMeshProUGUI_TimerText: {fileID: 35326535}
 --- !u!1 &101266655
 GameObject:
