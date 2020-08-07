@@ -53,12 +53,12 @@ public class GameManager : MonoBehaviour
     }
 
 
-    void DisplayWinners(List<string> winners)
+    void DisplayWinners(Dictionary<string, int> winners)
     {
         foreach(var winner in winners)
         {
             display_winner_text_box.text = "";
-            display_winner_text_box.text += winner + "\n";
+            display_winner_text_box.text += winner.Key + "won a Tier " + winner.Value.ToString() + " prize!\n";
         }
     }
 }
