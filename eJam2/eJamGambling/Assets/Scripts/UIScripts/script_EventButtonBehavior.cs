@@ -7,7 +7,7 @@ using TMPro;
     AUTHOR: Nichole Wong
     UNITY VERSION: 2020.1.0f1
     LAST MODIFIED: 8/5/2020
-    DEPENDENT ON: script_SlotBehavior, script_InputFieldSettings, script_GemButtonBehavior
+    DEPENDENT ON: script_SlotBehavior, script_InputFieldSettings, script_GemButtonBehavior, script_DifficultyNotification
     
     This script controls the effects of pressing one of the event buttons (ENTER and CLEAR)
 */
@@ -17,6 +17,7 @@ public class script_EventButtonBehavior: MonoBehaviour
     [SerializeField] private script_SlotBehavior ref_SlotBehavior = null; // Reference to the script_SlotBehavior script 
     [SerializeField] private script_InputFieldSettings ref_InputFieldSettings = null; // Reference to the script_InputFieldSettings script 
     [SerializeField] private script_GemButtonBehavior ref_GemButtonBehavior = null; // Reference to the script_GemButtonBehavior script
+    [SerializeField] private script_DifficultyNotification ref_DifficultyNotification = null; // Reference to the script_DifficultyNotification script
     [SerializeField] private string string_NextSceneName = "KarimScene"; // The name of the scene to transition to. Would ideally be an integer, but the UI is currently a prototype.
     
     // Alpha values used to make the text part of a button match its button's state
@@ -61,6 +62,7 @@ public class script_EventButtonBehavior: MonoBehaviour
         ref_InputFieldSettings.ClearInputField();
         ref_SlotBehavior.ResetSlots();
         ref_GemButtonBehavior.SetButtons(true);
+        ref_DifficultyNotification.UpdateDifficulty(0);
         ResetEnterButton();
     }
     

@@ -5,7 +5,8 @@ using TMPro;
 /*
     AUTHOR: Nichole Wong
     UNITY VERSION: 2020.1.0f1
-    LAST MODIFIED: 8/6/2020
+    LAST MODIFIED: 8/7/2020
+    EDIT BY: Karim Najib
     
     This script controls the behavior of timer and displays the time on the display
 */

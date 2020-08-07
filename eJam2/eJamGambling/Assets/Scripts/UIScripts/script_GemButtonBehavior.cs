@@ -4,8 +4,8 @@ using UnityEngine.UI;
 /*
     AUTHOR: Nichole Wong
     UNITY VERSION: 2020.1.0f1
-    LAST MODIFIED: 8/5/2020
-    DEPENDENT ON: script_SlotBehavior, script_EventButtonBehavior
+    LAST MODIFIED: 8/7/2020
+    DEPENDENT ON: script_SlotBehavior, script_EventButtonBehavior, script_DifficultyNotification
     
     This script controls the effects of pressing a gem-shaped button
 */
@@ -26,6 +26,9 @@ public class script_GemButtonBehavior: MonoBehaviour
     
     // Reference to the EventButtonBehavior script, whose functions will be called
     [SerializeField] private script_EventButtonBehavior ref_EventButtonBehavior = null;
+    
+    // Reference to the DifficultyNotification script, whose functions will be called 
+    [SerializeField] private script_DifficultyNotification ref_DifficultyNotification = null;
 
     private void Start()
     {
@@ -70,6 +73,7 @@ public class script_GemButtonBehavior: MonoBehaviour
             ref_SlotBehavior.AddImageToSlot(sprite_var_NewSprite);
             ref_SlotBehavior.ChangeSlotSprite(ref_SlotBehavior.GetNumberOfImages(), true);
             ref_EventButtonBehavior.CheckActivity();
+            ref_DifficultyNotification.UpdateDifficulty(ref_SlotBehavior.GetNumberOfImages());
             if (!ref_SlotBehavior.CanAddImages())
             {
                 SetButtons(false);
