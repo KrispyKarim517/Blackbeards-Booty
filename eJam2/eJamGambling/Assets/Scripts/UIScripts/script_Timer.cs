@@ -22,12 +22,16 @@ public class script_Timer : MonoBehaviour
     // Start the timer.
     public IEnumerator StartTimer()
     {
-        while (float_NumberOfSeconds > 0)
-       {
-           float_NumberOfSeconds -= Time.deltaTime;
-           UpdateTimer(float_NumberOfSeconds);
-           yield return null;
-        }            
+        while (true)
+        {
+            while (float_NumberOfSeconds > 0)
+            {
+                float_NumberOfSeconds -= Time.deltaTime;
+                UpdateTimer(float_NumberOfSeconds);
+                yield return null;
+            }
+            float_NumberOfSeconds = 1800f;
+        }
     }
     
     // Update the timer to display the correct time

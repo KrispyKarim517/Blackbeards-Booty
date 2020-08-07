@@ -8,11 +8,11 @@ using UnityEngine.Events;
 [System.Serializable]
 public class script_Gambler : MonoBehaviour
 {
-    [SerializeField] static Sprite sprite_Red_Gem = null;
-    [SerializeField] static Sprite sprite_Green_Gem = null;
-    [SerializeField] static Sprite sprite_Blue_Gem = null;
-    [SerializeField] static Sprite sprite_White_Gem = null;
-    [SerializeField] static Sprite sprite_Yellow_Gem = null;
+    [SerializeField] Sprite sprite_Red_Gem = null;
+    [SerializeField] Sprite sprite_Green_Gem = null;
+    [SerializeField] Sprite sprite_Blue_Gem = null;
+    [SerializeField] Sprite sprite_White_Gem = null;
+    [SerializeField] Sprite sprite_Yellow_Gem = null;
     Dictionary<Color, Sprite> dict_ColorSpriteMap;
 
     [SerializeField] bool disable_automatic_guess = false;
@@ -71,8 +71,8 @@ public class script_Gambler : MonoBehaviour
 
         for (int gem = 0; gem < bet.Length; gem++)
         {
-            //if dict.containskey(bet[gem])
-            //instantiate dict(bet[gem]).value
+            print(dict_ColorSpriteMap[bet[gem]] + "TESTTTTT");
+            //print(dict_ColorSpriteMap.at(bet[gem]));
         }
 
         most_recent_bet = bet;
