@@ -40,7 +40,7 @@ public class script_InputStorage : MonoBehaviour
 
         foreach(var entry in dict_inputs)
         {
-            int score = CheckWinForGivenCode(entry.Value, code)
+            int score = CheckWinForGivenCode(entry.Value, code);
             if(score != 0)
             {
                 winners.Add(entry.Key, score);
