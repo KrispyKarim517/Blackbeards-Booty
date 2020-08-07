@@ -38,14 +38,21 @@ public class script_InputStorage : MonoBehaviour
     {
         List<string> winners = new List<string>();
 
-        if(dict_inputs.ContainsValue(code))
+        foreach(var entry in dict_inputs)
         {
-            foreach(var entry in dict_inputs)
+            int correctColors = 0;
+
+            for(int count = 0; count < entry.Value.Length; ++count)
             {
-                if(entry.Value.Equals(code))
+                if(entry.Value[count].Equals(code[count]))
                 {
-                    winners.Add(entry.Key);
+                    ++correctColors;
                 }
+            }
+
+            if(correctColors == entry.Value.Length)
+            {
+                winners.Add(entry.Key);
             }
         }
 
