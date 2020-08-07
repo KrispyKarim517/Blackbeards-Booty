@@ -11,11 +11,11 @@ public class script_Gambler : MonoBehaviour
 
     static System.Random rand = new System.Random();
     readonly Color[] colors_arr = {
-                            new Color(255f, 255f, 255f, 1f),
-                            new Color(0f, 255f, 0f, 1f),
-                            new Color(0f, 0f, 255f, 1f),
-                            new Color(255f, 0f, 255f, 1f),
-                            new Color(219f, 170f, 9f, 1f)
+                            Color.white,
+                            Color.green,
+                            Color.blue,
+                            Color.red,
+                            Color.yellow
                         };
 
 
@@ -62,19 +62,5 @@ public class script_Gambler : MonoBehaviour
     {
         made_bet = false;
         wait_time = rand.Next(1, 3);
-        //ClearBoard();
     }
-    //public void ClearBoard()
-    //{
-    //    Color[] result =
-    //        {
-    //            new Color(0f, 0f, 0f, 1f),
-    //            new Color(0f, 0f, 0f, 1f),
-    //            new Color(0f, 0f, 0f, 1f),
-    //            new Color(0f, 0f, 0f, 1f),
-    //            new Color(0f, 0f, 0f, 1f),
-    //        };
-
-    //    ClearBoardEvent.Invoke(result);
-    //}
 }
