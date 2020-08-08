@@ -38,7 +38,6 @@ public class script_Gambler : MonoBehaviour
     bool made_bet = false;
     float time = 0f;
     float wait_time;
-    int distance_apart = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -72,12 +71,16 @@ public class script_Gambler : MonoBehaviour
     {
         Color[] bet = { colors_arr[rand.Next(0, 5)], colors_arr[rand.Next(0, 5)], colors_arr[rand.Next(0, 5)], colors_arr[rand.Next(0, 5)], colors_arr[rand.Next(0, 5)] };
 
-        for (int gem = 0; gem < bet.Length; gem++)
+        float hold = spawnPosition.transform.position.x;
+        Vector3 spawn = spawnPosition.transform.position;
+
+        for (int gem = bet.Length-1; gem != -1; gem--)
         {
-            Instantiate(dict_ColorSpriteMap[bet[gem]], new Vector3(distance_apart, 0, 0), Quaternion.identity);
-            distance_apart += 5;
+            print(gem);
+            Instantiate(dict_ColorSpriteMap[bet[gem]], spawn, Quaternion.identity);
+            spawn.x += 5;
         }
-        distance_apart = 0;
+        spawn.x = hold;
         most_recent_bet = bet;
 
         BetMadeEvent.Invoke(new Tuple<string, Color[]>(gambler_name, bet));
