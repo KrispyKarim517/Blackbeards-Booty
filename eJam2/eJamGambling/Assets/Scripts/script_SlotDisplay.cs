@@ -5,23 +5,16 @@ using UnityEngine.UI;
 
 public class script_SlotDisplay : MonoBehaviour
 {
-    [SerializeField] int SlotNumber = 0;
-    Image imgComponent;
+    Image img;
 
-    void Start()
+    private void Awake()
     {
-        imgComponent = this.GetComponent<Image>();
+        img = this.GetComponent<Image>();
     }
 
-    public void UpdateColor(Color[] args)
+    public void UpdateSprite(Sprite sprite)
     {
-        imgComponent.color = args[SlotNumber - 1];
+        img.sprite = sprite;
     }
 
-    public void ClearColor()
-    {
-        Debug.Log(imgComponent.color);
-        imgComponent.color = new Color(0f, 0f, 0f, 1f);
-        Debug.Log(imgComponent.color);
-    }
 }

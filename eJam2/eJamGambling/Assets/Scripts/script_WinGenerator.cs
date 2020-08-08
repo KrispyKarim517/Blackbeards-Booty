@@ -6,14 +6,14 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [System.Serializable]
-public class script_Gambler : MonoBehaviour
+public class script_WinGenerator : MonoBehaviour
 {
-    [SerializeField] GameObject sprite_Red_Gem = null;
-    [SerializeField] GameObject sprite_Green_Gem = null;
-    [SerializeField] GameObject sprite_Blue_Gem = null;
-    [SerializeField] GameObject sprite_White_Gem = null;
-    [SerializeField] GameObject sprite_Yellow_Gem = null;
-    Dictionary<Color, GameObject> dict_ColorSpriteMap;
+    [SerializeField] Sprite sprite_Red_Gem = null;
+    [SerializeField] Sprite sprite_Green_Gem = null;
+    [SerializeField] Sprite sprite_Blue_Gem = null;
+    [SerializeField] Sprite sprite_White_Gem = null;
+    [SerializeField] Sprite sprite_Yellow_Gem = null;
+    Dictionary<Color, Sprite> dict_ColorSpriteMap;
 
     [SerializeField] bool disable_automatic_guess = false;
 
@@ -29,22 +29,21 @@ public class script_Gambler : MonoBehaviour
                         };
 
 
-    public UnityEvent<Tuple<string, Color[]>> BetMadeEvent = new UnityEvent<Tuple<string, Color[]>>();
-    //public UnityEvent<Color[]> ClearBoardEvent = new UnityEvent<Color[]>();
+    public UnityEvent<Sprite[]> WinningSetPicked = new UnityEvent<Sprite[]>();
 
     public Color[] most_recent_bet = { };
 
-    public string gambler_name = "";
     bool made_bet = false;
     float time = 0f;
-    float wait_time;
+    
+    [Header("Time until a roll")]
+    public float wait_time = 5f;
 
     // Start is called before the first frame update
     void Start()
     {
-        wait_time = rand.Next(1, 3);
-
-        dict_ColorSpriteMap = new Dictionary<Color, GameObject>
+        wait_time += 1f;
+        dict_ColorSpriteMap = new Dictionary<Color, Sprite>
             {
                 { Color.red, sprite_Red_Gem},
                 { Color.green, sprite_Green_Gem },
@@ -69,26 +68,31 @@ public class script_Gambler : MonoBehaviour
 
     public void MakeBet()
     {
-        Color[] bet = { colors_arr[rand.Next(0, 5)], colors_arr[rand.Next(0, 5)], colors_arr[rand.Next(0, 5)], colors_arr[rand.Next(0, 5)], colors_arr[rand.Next(0, 5)] };
+        Color[] bet = { colors_arr[rand.Next(0, 5)],
+                        colors_arr[rand.Next(0, 5)],
+                        colors_arr[rand.Next(0, 5)],
+                        colors_arr[rand.Next(0, 5)],
+                        colors_arr[rand.Next(0, 5)] };
 
-        float hold = spawnPosition.transform.position.x;
-        Vector3 spawn = spawnPosition.transform.position;
-
-        for (int gem = bet.Length-1; gem != -1; gem--)
-        {
-            print(gem);
-            Instantiate(dict_ColorSpriteMap[bet[gem]], spawn, Quaternion.identity);
-            spawn.x += 5;
-        }
-        spawn.x = hold;
         most_recent_bet = bet;
 
-        BetMadeEvent.Invoke(new Tuple<string, Color[]>(gambler_name, bet));
+        WinningSetPicked.Invoke(ConvertColorToSprite(bet));
+
+        GameManager.instance.DisplayWinners(bet);
     }
 
     public void NewRound()
     {
         made_bet = false;
-        wait_time = rand.Next(1, 3);
+        time = 0f;
+    }
+
+    private Sprite[] ConvertColorToSprite(Color[] colors)
+    {
+        return new Sprite[] { dict_ColorSpriteMap[colors[0]],
+                              dict_ColorSpriteMap[colors[1]],
+                              dict_ColorSpriteMap[colors[2]],
+                              dict_ColorSpriteMap[colors[3]],
+                              dict_ColorSpriteMap[colors[4]] };
     }
 }

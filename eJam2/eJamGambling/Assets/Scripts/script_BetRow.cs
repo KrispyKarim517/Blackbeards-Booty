@@ -33,7 +33,7 @@ public class script_BetRow : MonoBehaviour
 
         foreach(var slot in list_slots)
         {
-            slot.ClearColor();
+            //slot.ClearColor();
         }
         Debug.Log("");
     }

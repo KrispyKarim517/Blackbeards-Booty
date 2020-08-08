@@ -19,9 +19,19 @@ public class script_SlotBehavior : MonoBehaviour
     [SerializeField] private int int_MinNumberOfSlots = 0; // The min number of slots needed before the player can continue
     private int int_MaxNumberOfSlots = 0; // The max number of slots 
 
+    [Header("Gem Display Slots")]
+    [SerializeField] script_SlotDisplay sprite_GemSlot_1 = null;
+    [SerializeField] script_SlotDisplay sprite_GemSlot_2 = null;
+    [SerializeField] script_SlotDisplay sprite_GemSlot_3 = null;
+    [SerializeField] script_SlotDisplay sprite_GemSlot_4 = null;
+    [SerializeField] script_SlotDisplay sprite_GemSlot_5 = null;
+    script_SlotDisplay[] arr_Slots;
+
     private void Start()
     {
         int_MaxNumberOfSlots = transform_Slot.childCount; // Set the integer to the number of children under the Slot grid 
+
+        arr_Slots = new script_SlotDisplay[] { sprite_GemSlot_1, sprite_GemSlot_2, sprite_GemSlot_3, sprite_GemSlot_4, sprite_GemSlot_5 };
     }
     
     // Returns true if more images can be added to the SlotImages grid
@@ -90,6 +100,25 @@ public class script_SlotBehavior : MonoBehaviour
         for (int i = transform_Slot.childCount - 1; i >= 0; i--)
         {
             ChangeSlotSprite(i + 1, false);
+        }
+    }
+
+
+    // Event Listener that will pass sprites to their according display slots;
+    public void DisplayWinningGemsToSlots(Sprite[] gems)
+    {
+        for(int i = 0; i < gems.Length; ++i)
+        {
+            arr_Slots[i].UpdateSprite(gems[i]);
+        }
+    }
+
+    // Event listener 
+    public void ClearSlotGems()
+    {
+        foreach (var slot in arr_Slots)
+        {
+            slot.UpdateSprite(null);
         }
     }
 }

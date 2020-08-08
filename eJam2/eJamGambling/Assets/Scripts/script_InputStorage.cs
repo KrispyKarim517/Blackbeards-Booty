@@ -4,6 +4,24 @@ using UnityEngine;
 
 public class script_InputStorage : MonoBehaviour
 {
+    public static script_InputStorage instance = null;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Destroy(this);
+        }
+
+
+    }
+
+
     //Dictionary of inputs
     Dictionary<string, Color[]> dict_inputs = new Dictionary<string, Color[]>();
 

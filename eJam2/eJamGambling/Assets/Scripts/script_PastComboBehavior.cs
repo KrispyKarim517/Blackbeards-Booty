@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class script_PastComboBehavior : MonoBehaviour
 {
-    [SerializeField] Sprite RedGem = null;
-    [SerializeField] Sprite BlueGem = null;
-    [SerializeField] Sprite GreenGem = null;
-    [SerializeField] Sprite PurpleGem = null;
-    [SerializeField] Sprite WhiteGem = null;
+    //[SerializeField] Sprite RedGem = null;
+    //[SerializeField] Sprite BlueGem = null;
+    //[SerializeField] Sprite GreenGem = null;
+    //[SerializeField] Sprite PurpleGem = null;
+    //[SerializeField] Sprite WhiteGem = null;
 
     [SerializeField] Image Slot_1 = null;
     [SerializeField] Image Slot_2 = null;
