@@ -31,9 +31,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        //list_gamblers.Add(ref_g1);
-        //list_gamblers.Add(ref_g2);
-        //list_gamblers.Add(ref_g3);
+        list_gamblers.Add(ref_g1);
+        list_gamblers.Add(ref_g2);
+        list_gamblers.Add(ref_g3);
     }
 
     private void Update()
@@ -42,17 +42,17 @@ public class GameManager : MonoBehaviour
 
         if (time > 8f)
         {
-            //NewRound.Invoke();
-            //time = 0f;
-            //bool_wait = false;
+            NewRound.Invoke();
+            time = 0f;
+            bool_wait = false;
         }
 
         else if (time > 5f)
         {
             if (!bool_wait)
             {
-                //ref_Winner.MakeBet();
-                //DisplayWinners(ref_BetHolder.CheckWins(ref_Winner.most_recent_bet));
+                ref_Winner.MakeBet();
+                DisplayWinners(ref_BetHolder.CheckWins(ref_Winner.most_recent_bet));
                 bool_wait = true;
             }
         }
