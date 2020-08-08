@@ -8,14 +8,16 @@ using UnityEngine.Events;
 [System.Serializable]
 public class script_Gambler : MonoBehaviour
 {
-    [SerializeField] Sprite sprite_Red_Gem = null;
-    [SerializeField] Sprite sprite_Green_Gem = null;
-    [SerializeField] Sprite sprite_Blue_Gem = null;
-    [SerializeField] Sprite sprite_White_Gem = null;
-    [SerializeField] Sprite sprite_Yellow_Gem = null;
-    Dictionary<Color, Sprite> dict_ColorSpriteMap;
+    [SerializeField] GameObject sprite_Red_Gem = null;
+    [SerializeField] GameObject sprite_Green_Gem = null;
+    [SerializeField] GameObject sprite_Blue_Gem = null;
+    [SerializeField] GameObject sprite_White_Gem = null;
+    [SerializeField] GameObject sprite_Yellow_Gem = null;
+    Dictionary<Color, GameObject> dict_ColorSpriteMap;
 
     [SerializeField] bool disable_automatic_guess = false;
+
+    [SerializeField] GameObject spawnPosition;
 
     static System.Random rand = new System.Random();
     readonly Color[] colors_arr = {
@@ -36,13 +38,14 @@ public class script_Gambler : MonoBehaviour
     bool made_bet = false;
     float time = 0f;
     float wait_time;
+    int distance_apart = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         wait_time = rand.Next(1, 3);
 
-        dict_ColorSpriteMap = new Dictionary<Color, Sprite>
+        dict_ColorSpriteMap = new Dictionary<Color, GameObject>
             {
                 { Color.red, sprite_Red_Gem},
                 { Color.green, sprite_Green_Gem },
@@ -71,10 +74,10 @@ public class script_Gambler : MonoBehaviour
 
         for (int gem = 0; gem < bet.Length; gem++)
         {
-            print(dict_ColorSpriteMap[bet[gem]] + "TESTTTTT");
-            //print(dict_ColorSpriteMap.at(bet[gem]));
+            Instantiate(dict_ColorSpriteMap[bet[gem]], new Vector3(distance_apart, 0, 0), Quaternion.identity);
+            distance_apart += 5;
         }
-
+        distance_apart = 0;
         most_recent_bet = bet;
 
         BetMadeEvent.Invoke(new Tuple<string, Color[]>(gambler_name, bet));

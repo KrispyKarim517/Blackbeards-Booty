@@ -9,6 +9,7 @@ MonoImporter:
   - sprite_Blue_Gem: {fileID: 21300000, guid: 5c6d7882390431941b7c287f6d8d1203, type: 3}
   - sprite_White_Gem: {fileID: 21300000, guid: 14f66f9d57570dc498c47b90faef5bba, type: 3}
   - sprite_Yellow_Gem: {fileID: 21300000, guid: da2b7cde4b021394485b18dad1eadf0f, type: 3}
+  - spawnPosition: {fileID: 768197098559385946, guid: 1fa175af2403aae469704a5caf02ddf5, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
