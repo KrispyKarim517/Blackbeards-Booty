@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -20,33 +21,38 @@ public class GameManager : MonoBehaviour
     public UnityEvent NewRound = new UnityEvent();
 
 
+    [SerializeField] GameObject Row_to_insert = null;
+    [SerializeField] GameObject Row_parent = null;
+
+    [SerializeField] Sprite TEMP = null;
+
     float time = 0f;
     bool bool_wait = false;
 
     void Start()
     {
-        list_gamblers.Add(ref_g1);
-        list_gamblers.Add(ref_g2);
-        list_gamblers.Add(ref_g3);
+        //list_gamblers.Add(ref_g1);
+        //list_gamblers.Add(ref_g2);
+        //list_gamblers.Add(ref_g3);
     }
 
     private void Update()
     {
+        time += Time.deltaTime;
 
-
-        if ((time += Time.deltaTime) > 8f)
+        if (time > 8f)
         {
-            NewRound.Invoke();
-            time = 0f;
-            bool_wait = false;
+            //NewRound.Invoke();
+            //time = 0f;
+            //bool_wait = false;
         }
 
-        else if ((time += Time.deltaTime) > 5f)
+        else if (time > 5f)
         {
             if (!bool_wait)
             {
-                ref_Winner.MakeBet();
-                DisplayWinners(ref_BetHolder.CheckWins(ref_Winner.most_recent_bet));
+                //ref_Winner.MakeBet();
+                //DisplayWinners(ref_BetHolder.CheckWins(ref_Winner.most_recent_bet));
                 bool_wait = true;
             }
         }
@@ -60,5 +66,15 @@ public class GameManager : MonoBehaviour
             display_winner_text_box.text = "";
             display_winner_text_box.text += winner.Key + "won a Tier " + winner.Value.ToString() + " prize!\n";
         }
+    }
+
+    void AddPastCombo()
+    {
+        script_PastComboBehavior row = Instantiate(Row_to_insert, Row_parent.transform).GetComponent<script_PastComboBehavior>();
+
+        if (row == null)
+            Debug.Log("Row is null");
+        else
+            row.SetSlotsGems(new Sprite[] { TEMP, TEMP, TEMP, TEMP, TEMP });
     }
 }
