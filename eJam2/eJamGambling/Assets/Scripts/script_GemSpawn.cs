@@ -17,26 +17,18 @@ public class script_GemSpawn : MonoBehaviour
     void Start()
     {
         slotArray = new SpriteRenderer[]
-            {
-                slot1,
-                slot2,
-                slot3,
-                slot4,
-                slot5
-            };
+            { slot1,
+              slot2,
+              slot3,
+              slot4,
+              slot5 };
     }
 
     public void SpriteArray(Sprite[] arrSprites)
     {
         for (int i = 0; i < slotArray.Length; i++)
         {
-
+            slotArray[i].sprite = arrSprites[i];
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
