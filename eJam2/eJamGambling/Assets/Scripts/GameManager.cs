@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     [Header("Temporary Text box to print out winners")]
     [SerializeField] TextMeshProUGUI display_winner_text_box = null;
 
+    [Header("Event for Closing Treasure Chest")]
+    public UnityEvent CloseChest = new UnityEvent();
     [Header("Event for Starting a New Round")]
     public UnityEvent NewRound = new UnityEvent();
 
@@ -28,6 +30,12 @@ public class GameManager : MonoBehaviour
     float time = 0f;
 
     private Sprite[] winning_set_cache = null;
+
+    bool wait = false;
+
+    [Header("Maximum number of visible previous Combos")]
+    [SerializeField] private int max_prev_combos = 0;
+    int num_prev_combos = 0;
 
     void Awake()
     {
@@ -48,9 +56,11 @@ public class GameManager : MonoBehaviour
 
         if (time > round_time)
         {
-            NewRound.Invoke();
-            AddPastCombo();
-            time = 0f;
+            if (!wait)
+            {
+                StartCoroutine(StartRoundAfterChestClose());
+                wait = true;
+            }
         }
 
     }
@@ -86,13 +96,32 @@ public class GameManager : MonoBehaviour
 
     public void AddPastCombo()
     {
+        if (num_prev_combos >= max_prev_combos)
+        {
+            Destroy(Row_parent.GetComponentsInChildren<script_PastComboBehavior>()[0].gameObject);
+        }
+
         script_PastComboBehavior row = Instantiate(Row_to_insert, Row_parent.transform).GetComponent<script_PastComboBehavior>();
 
         row.SetSlotsGems(winning_set_cache);
+
+        ++num_prev_combos;
     }
 
     public void WipeWinners()
     {
         display_winner_text_box.text = "";
     }
+
+    private IEnumerator StartRoundAfterChestClose()
+    {
+        CloseChest.Invoke();
+        yield return new WaitForSecondsRealtime(1f);
+        AddPastCombo();
+        NewRound.Invoke();
+        time = 0f;
+        wait = false;
+        yield return null;
+    }
+
 }

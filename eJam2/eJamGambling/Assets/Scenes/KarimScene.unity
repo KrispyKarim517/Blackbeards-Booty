@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2035111234}
-  m_IndirectSpecularColor: {r: 131.15134, g: 162.54797, b: 215.19327, a: 1}
+  m_IndirectSpecularColor: {r: 130.94983, g: 162.22717, b: 214.7164, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -278,6 +278,33 @@ MonoBehaviour:
   slot3: {fileID: 1307464536}
   slot4: {fileID: 1748243252}
   slot5: {fileID: 1003703711}
+  ChestOpened:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1815342147}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CacheWinningSet
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 64753617}
+        m_TargetAssemblyTypeName: script_SlotBehavior, Assembly-CSharp
+        m_MethodName: DisplayWinningGemsToSlots
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &146614146
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,7 +486,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 168218571}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.019999983, y: 1.196, z: 1.810133}
+  m_LocalPosition: {x: 0.019999983, y: 1.196, z: 1.8101406}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 405591765}
@@ -2899,7 +2926,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037846703}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.019999983, y: 1.196, z: -0.6870328}
+  m_LocalPosition: {x: 0.019999983, y: 1.196, z: -0.6870347}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 405591765}
@@ -3544,30 +3571,6 @@ MonoBehaviour:
   WinningSetPicked:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1815342147}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: CacheWinningSet
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 64753617}
-        m_TargetAssemblyTypeName: script_SlotBehavior, Assembly-CSharp
-        m_MethodName: DisplayWinningGemsToSlots
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 6561930615291975195}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: SetTrigger
@@ -3582,7 +3585,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 140240687}
         m_TargetAssemblyTypeName: script_GemSpawn, Assembly-CSharp
-        m_MethodName: SpriteArray
+        m_MethodName: SpawnGems
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4823,6 +4826,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   display_winner_text_box: {fileID: 146614148}
+  CloseChest:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6561930615291975195}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Close
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 140240687}
+        m_TargetAssemblyTypeName: script_GemSpawn, Assembly-CSharp
+        m_MethodName: ClearGems
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   NewRound:
     m_PersistentCalls:
       m_Calls:
@@ -4862,21 +4892,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6561930615291975195}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Close
-          m_BoolArgument: 0
-        m_CallState: 2
   Row_to_insert: {fileID: 4631620423251163955, guid: 63abaa23a3aac3c49b1ec367499f303f, type: 3}
   Row_parent: {fileID: 1350051212}
   round_time: 10
+  max_prev_combos: 9
 --- !u!4 &1815342148
 Transform:
   m_ObjectHideFlags: 0
@@ -5276,7 +5295,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059789766}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5101328, y: 1.196, z: 1.1760665}
+  m_LocalPosition: {x: 2.5101404, y: 1.196, z: 1.1760703}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 405591765}
