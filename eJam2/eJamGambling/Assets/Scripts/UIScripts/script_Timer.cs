@@ -15,7 +15,7 @@ public class script_Timer : MonoBehaviour
     [SerializeField] private float float_NumberOfSeconds = 1800f; // The number of time in seconds. 1800f = 30 minutes.
     [SerializeField] private TextMeshProUGUI TextMeshProUGUI_TimerText = null;
 
-    private float time;
+    [HideInInspector] public float time;
 
     private void Start()
     {

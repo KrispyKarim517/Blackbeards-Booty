@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     
 
     [Header("Temporary Text box to print out winners")]
-    [SerializeField] TextMeshProUGUI display_winner_text_box = null;
+    [SerializeField] public TextMeshProUGUI display_winner_text_box = null;
 
     [Header("Event for Closing Treasure Chest")]
     public UnityEvent CloseChest = new UnityEvent();
