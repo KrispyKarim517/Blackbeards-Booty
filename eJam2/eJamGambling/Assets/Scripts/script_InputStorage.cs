@@ -37,6 +37,7 @@ public class script_InputStorage : MonoBehaviour
         {
             return false;
         }
+        
     }
 
     //Returns true if successfully removed, false if name is not in input list
@@ -119,4 +120,10 @@ public class script_InputStorage : MonoBehaviour
         return score;
     }
 
+
+    //Temp Function for being Cheeky
+    public Dictionary<string, Color[]> GetBets()
+    {
+        return dict_inputs;
+    }
 }

@@ -37,6 +37,11 @@ public class GameManager : MonoBehaviour
             Destroy(this);
     }
 
+    private void Start()
+    {
+        NewRound.AddListener(WipeWinners);
+    }
+
     private void Update()
     {
         time += Time.deltaTime;
@@ -57,18 +62,25 @@ public class GameManager : MonoBehaviour
 
     public void DisplayWinners(Color[] colors)
     {
-        //var winners = script_InputStorage.instance.CheckWins(colors);
+        var winners = script_InputStorage.instance.CheckWins(colors);
 
-        var winners = new Dictionary<string, int> { { "Joe", 1 },
-                                                    { "Ryan", 2 },
-                                                    { "Karim", 3 },
-                                                    { "Lyndyn", 4},
-                                                    { "Nichole", 5} };
+        //var winners = new Dictionary<string, int> { { "Joe", 1 },
+          //                                          { "Ryan", 2 },
+            //                                        { "Karim", 3 },
+              //                                      { "Lyndyn", 4},
+                //                                    { "Nichole", 5} };
 
         display_winner_text_box.text = "";
-        foreach (var winner in winners)
+        if (winners.Count != 0)
         {
-            display_winner_text_box.text += winner.Key + " won a Tier " + winner.Value.ToString() + " prize!\n";
+            foreach (var winner in winners)
+            {
+                display_winner_text_box.text += winner.Key + " won a Tier " + winner.Value.ToString() + " prize!\n";
+            }
+        }
+        else
+        {
+            display_winner_text_box.text = "No Winners";
         }
     }
 
@@ -77,5 +89,10 @@ public class GameManager : MonoBehaviour
         script_PastComboBehavior row = Instantiate(Row_to_insert, Row_parent.transform).GetComponent<script_PastComboBehavior>();
 
         row.SetSlotsGems(winning_set_cache);
+    }
+
+    public void WipeWinners()
+    {
+        display_winner_text_box.text = "";
     }
 }
