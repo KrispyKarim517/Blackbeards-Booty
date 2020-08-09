@@ -74,12 +74,6 @@ public class GameManager : MonoBehaviour
     {
         var winners = script_InputStorage.instance.CheckWins(colors);
 
-        //var winners = new Dictionary<string, int> { { "Joe", 1 },
-          //                                          { "Ryan", 2 },
-            //                                        { "Karim", 3 },
-              //                                      { "Lyndyn", 4},
-                //                                    { "Nichole", 5} };
-
         display_winner_text_box.text = "";
         if (winners.Count != 0)
         {

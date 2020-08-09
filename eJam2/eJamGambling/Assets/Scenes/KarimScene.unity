@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2035111234}
-  m_IndirectSpecularColor: {r: 131.16855, g: 162.52502, b: 215.10977, a: 1}
+  m_IndirectSpecularColor: {r: 130.94983, g: 162.22717, b: 214.7164, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -305,6 +305,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 832344104}
+        m_TargetAssemblyTypeName: script_PopUpWindow, Assembly-CSharp
+        m_MethodName: DisplayPopUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &146614146
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,7 +498,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 168218571}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.019999983, y: 1.196, z: 1.8101487}
+  m_LocalPosition: {x: 0.019999983, y: 1.196, z: 1.8101535}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 405591765}
@@ -2424,6 +2436,11 @@ MonoBehaviour:
   ref_resultsDisplay: {fileID: 832344102}
   ref_window: {fileID: 1549252630276781217, guid: c31dc31f13f24974bbc94d20e9d1e614, type: 3}
   display_winner_text_box: {fileID: 8478899039348138407, guid: 196e6629ae1db5b4b8a27fb453223eff, type: 3}
+  sprite_Red_Gem: {fileID: 21300000, guid: 9fd5e4a44c83b5547b969ef423f3b68c, type: 3}
+  sprite_Green_Gem: {fileID: 21300000, guid: cf0cdc5a038f3564f9fc8a93d9a80d86, type: 3}
+  sprite_Blue_Gem: {fileID: 21300000, guid: 5c6d7882390431941b7c287f6d8d1203, type: 3}
+  sprite_White_Gem: {fileID: 21300000, guid: 14f66f9d57570dc498c47b90faef5bba, type: 3}
+  sprite_Yellow_Gem: {fileID: 21300000, guid: da2b7cde4b021394485b18dad1eadf0f, type: 3}
 --- !u!1001 &863433356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2944,7 +2961,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037846703}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.019999983, y: 1.196, z: -0.68703675}
+  m_LocalPosition: {x: 0.019999983, y: 1.196, z: -0.68703794}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 405591765}
@@ -3647,6 +3664,18 @@ MonoBehaviour:
       - m_Target: {fileID: 140240687}
         m_TargetAssemblyTypeName: script_GemSpawn, Assembly-CSharp
         m_MethodName: SpawnGems
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 832344104}
+        m_TargetAssemblyTypeName: script_PopUpWindow, Assembly-CSharp
+        m_MethodName: CacheWinners
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4955,7 +4984,7 @@ MonoBehaviour:
         m_CallState: 2
   Row_to_insert: {fileID: 4631620423251163955, guid: 63abaa23a3aac3c49b1ec367499f303f, type: 3}
   Row_parent: {fileID: 1350051212}
-  round_time: 10
+  round_time: 12
   max_prev_combos: 8
 --- !u!4 &1815342148
 Transform:
@@ -5356,7 +5385,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059789766}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5101485, y: 1.196, z: 1.1760744}
+  m_LocalPosition: {x: 2.5101533, y: 1.196, z: 1.1760768}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 405591765}

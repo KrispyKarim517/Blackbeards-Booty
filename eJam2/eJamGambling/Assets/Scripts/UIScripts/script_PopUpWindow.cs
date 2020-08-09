@@ -33,8 +33,45 @@ public class script_PopUpWindow : MonoBehaviour
     // imageClone prefab is 
     private Image imageClone = null;
     private TextMeshProUGUI displayClone = null;
+    
 
-    private void Update() 
+
+    [Header("Sprites")]
+    [SerializeField] Sprite sprite_Red_Gem = null;
+    [SerializeField] Sprite sprite_Green_Gem = null;
+    [SerializeField] Sprite sprite_Blue_Gem = null;
+    [SerializeField] Sprite sprite_White_Gem = null;
+    [SerializeField] Sprite sprite_Yellow_Gem = null;
+    Dictionary<Sprite, Color> dict_SpriteColorMap;
+    readonly Color[] colors_arr = {
+                            Color.white,
+                            Color.green,
+                            Color.blue,
+                            Color.red,
+                            Color.yellow
+                        };
+    // 
+    private Color[] winningSequence = null;
+
+    private void Start()
+    {
+        dict_SpriteColorMap = new Dictionary<Sprite, Color>
+            {
+                { sprite_Red_Gem, Color.red},
+                { sprite_Green_Gem, Color.green },
+                { sprite_Blue_Gem, Color.blue },
+                { sprite_White_Gem, Color.white },
+                { sprite_Yellow_Gem, Color.yellow }
+            };
+    }
+
+    public void CacheWinners(Sprite[] sprites)
+    {
+        winningSequence = ConvertSpriteToColor(sprites);
+    }
+
+
+    public void DisplayPopUp() 
     {
         // This instantiates 
         if (ref_Timer.time == 0f && !isExpanded) 
@@ -68,10 +105,10 @@ public class script_PopUpWindow : MonoBehaviour
 
         // Change this in the final game
         // I only added this to make it work on my test scene
-        Color[] c = new Color[5] {Color.blue, Color.green, Color.red, Color.yellow, Color.white};
+        //Color[] c = new Color[5] {Color.blue, Color.green, Color.red, Color.yellow, Color.white};
 
-        GameManager.instance.DisplayWinners(c);
-        yield return new WaitForSecondsRealtime(5f);
+        GameManager.instance.DisplayWinners(winningSequence);
+        yield return new WaitForSecondsRealtime(3f);
         minimizeRoutine = StartCoroutine(MinimizeWindow());
         StopCoroutine(ExpandWindow());
     }
@@ -84,10 +121,20 @@ public class script_PopUpWindow : MonoBehaviour
             yield return new WaitForSecondsRealtime(0.00000005f);
         }
 
-        ref_Timer.RestartTimer();
+        //ref_Timer.RestartTimer();
         isExpanded = false;
         Destroy(imageClone);
         Destroy(displayClone);
         StopCoroutine(minimizeRoutine);
+    }
+
+
+    private Color[] ConvertSpriteToColor(Sprite[] sprites)
+    {
+        return new Color[] { dict_SpriteColorMap[sprites[0]],
+                              dict_SpriteColorMap[sprites[1]],
+                              dict_SpriteColorMap[sprites[2]],
+                              dict_SpriteColorMap[sprites[3]],
+                              dict_SpriteColorMap[sprites[4]] };
     }
 }

@@ -88,7 +88,7 @@ public class script_WinGenerator : MonoBehaviour
 
         WinningSetPicked.Invoke(ConvertColorToSprite(bet));
 
-        GameManager.instance.DisplayWinners(bet);
+        //GameManager.instance.DisplayWinners(bet);
     }
 
     public void NewRound()
@@ -124,6 +124,6 @@ public class script_WinGenerator : MonoBehaviour
 
         WinningSetPicked.Invoke(ConvertColorToSprite(bet));
 
-        GameManager.instance.DisplayWinners(bet);
+        //GameManager.instance.DisplayWinners(bet);
     }
 }
