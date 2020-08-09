@@ -99,7 +99,7 @@ public class script_InputStorage : MonoBehaviour
         {
             for(int i = 0; i < entry.Length; ++i)
             {
-                if(indexBlacklist.Contains(i) && entry[count].Equals(code[i]))
+                if(!indexBlacklist.Contains(i) && entry[count].Equals(code[i]))
                 {
                     indexBlacklist.Add(i);
                     ++correctColors;
