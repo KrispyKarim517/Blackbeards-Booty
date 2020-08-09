@@ -94,12 +94,14 @@ public class script_InputStorage : MonoBehaviour
         }
 
         correctColors = 0;
+        List<int> indexBlacklist = new List<int>();
         for(int count = 0; count < entry.Length; ++count)
         {
             for(int i = 0; i < entry.Length; ++i)
             {
-                if(entry[count].Equals(code[i]))
+                if(indexBlacklist.Contains(i) && entry[count].Equals(code[i]))
                 {
+                    indexBlacklist.Add(i);
                     ++correctColors;
                     break;
                 }
