@@ -65,6 +65,9 @@ public class script_PopUpWindow : MonoBehaviour
             imageClone.transform.localScale += new Vector3(1, 0, 0);
             yield return new WaitForSecondsRealtime(0.00000005f);
         }
+
+        // Change this in the final game
+        // I only added this to make it work on my test scene
         Color[] c = new Color[5] {Color.blue, Color.green, Color.red, Color.yellow, Color.white};
 
         GameManager.instance.DisplayWinners(c);
