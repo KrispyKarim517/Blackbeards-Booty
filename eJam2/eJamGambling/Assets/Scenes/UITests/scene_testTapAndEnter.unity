@@ -3646,7 +3646,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: asdfasfd
+  m_Text: NAME (10 LETTERS)
 --- !u!222 &1791334626
 CanvasRenderer:
   m_ObjectHideFlags: 0
