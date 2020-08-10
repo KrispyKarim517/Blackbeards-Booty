@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     float time = 0f;
 
     private Sprite[] winning_set_cache = null;
-
+    private int prize_amount;
     bool wait = false;
 
     [Header("Maximum number of visible previous Combos")]
@@ -79,7 +79,35 @@ public class GameManager : MonoBehaviour
         {
             foreach (var winner in winners)
             {
-                display_winner_text_box.text += winner.Key + " won a Tier " + winner.Value.ToString() + " prize!\n";
+                if (winner.Value == 1)
+                {
+                    prize_amount = 5;
+                }
+                else if (winner.Value == 2)
+                {
+                    prize_amount = 10;
+                }
+                else if (winner.Value == 3)
+                {
+                    prize_amount = 15;
+                }
+                else if (winner.Value == 4)
+                {
+                    prize_amount = 25;
+                }
+                else if (winner.Value == 5)
+                {
+                    prize_amount = 35;
+                }
+                else if (winner.Value == 6)
+                {
+                    prize_amount = 50;
+                }
+                else
+                {
+                    prize_amount = 0;
+                }
+                display_winner_text_box.text += winner.Key + " won a Tier " + winner.Value.ToString() + " prize! ($" + prize_amount.ToString() + ")\n";
             }
         }
         else
